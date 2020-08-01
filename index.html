@@ -169,6 +169,88 @@
   </div>
 </section>
 
+<!-- PHOTO GALLERY -->
+<section id="gallery" class="py-5">
+  <div class="container">
+    <h1 class="text-center">Photo Gallery</h1>
+    <p class="text-center">Check out our photos</p>
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <a href="https://source.unsplash.com/random/560x569" data-toggle="lightbox" data-gallery="img-gallery"
+          data-height="560" data-width="560">
+          <img src="https://source.unsplash.com/random/560x569" alt="image" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://source.unsplash.com/random/561x562" data-toggle="lightbox" data-gallery="img-gallery"
+          data-height="560" data-width="560">
+          <img src="https://source.unsplash.com/random/561x562" alt="image" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://source.unsplash.com/random/561x561" data-toggle="lightbox" data-gallery="img-gallery"
+          data-height="560" data-width="560">
+          <img src="https://source.unsplash.com/random/561x561" alt="image" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <a href="https://source.unsplash.com/random/560x560" data-toggle="lightbox" data-gallery="img-gallery"
+          data-height="560" data-width="560">
+          <img src="https://source.unsplash.com/random/560x560" alt="image" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://source.unsplash.com/random/562x561" data-toggle="lightbox" data-gallery="img-gallery"
+          data-height="560" data-width="560">
+          <img src="https://source.unsplash.com/random/562x561" alt="image" class="img-fluid">
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="https://source.unsplash.com/random/561x563" data-toggle="lightbox" data-gallery="img-gallery"
+          data-height="560" data-width="560">
+          <img src="https://source.unsplash.com/random/561x563" alt="image" class="img-fluid">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter" class="text-center p-5 bg-dark text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h1>Sign Up for Our Newsletter</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium voluptate esse asperiores placeat
+          cupiditate id maiores, odit quisquam ratione doloribus corrupti aspernatur magni, cumque recusandae.</p>
+        <form class="form-inline justify-content-center">
+          <input type="text" class="form-control mb-2 mr-2" placeholder="Enter Name">
+          <input type="text" class="form-control mb-2 mr-2" placeholder="Enter Email">
+          <button class="btn btn-primary mb-2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="main-footer" class="text-center p-4">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p>Copyright &copy; <span id="year"></span> Glozzom</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</footer>
+
+
+<!--  ### MODALS ### -->
+
 <!-- VIDEO MODAL -->
 <div class="modal" id="videoModal">
   <div class="modal-dialog">
@@ -189,6 +271,7 @@
 <!-- SCRIPTS -->
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/ekko-lightbox.min.js"></script>
 <script>
   // Get the current year for the copyright
   $('#year').text(new Date().getFullYear());
@@ -242,6 +325,15 @@
       })
     }
   })
+
+  // Lightbox
+  $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+    event.preventDefault();
+    $(this).ekkoLightbox({
+      alwaysShowClose: true,
+    });
+  });
+
 </script>
 </body>
 
