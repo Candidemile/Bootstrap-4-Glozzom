@@ -8,8 +8,9 @@
   <!-- CSS LINKS -->
   <link rel="stylesheet" href="css/fontawesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/ekko-lightbox.css">
 </head>
 
 <!-- NAVBAR -->
@@ -272,7 +273,7 @@
 <!-- SCRIPTS -->
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/ekko-lightbox.min.js"></script>
+<script src="js/slick.min.js"></script>
 <script>
   // Get the current year for the copyright
   $('#year').text(new Date().getFullYear());
@@ -283,23 +284,6 @@
     pause: 'hover'
   })
 
-  // Video Play
-  $(function () {
-    // Auto play modal video
-    $('.video').click(function () {
-      var theModal = $(this).data("target"),
-        videoSRC = $(this).attr("data-video"),
-        videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0html5=1&autoplay=1";
-      $(theModal + ' iframe').attr('src', videoSRCauto);
-      $(theModal + ' button.close').click(function () {
-        $(theModal + ' iframe').attr('src', videoSRC);
-      });
-
-      $('#videoModal').on('hide.bs.modal', function () {
-        $(theModal + ' iframe').attr('src', videoSRC);
-      })
-    });
-  });
 
 
 
@@ -327,13 +311,6 @@
     }
   })
 
-  // Lightbox
-  $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-    event.preventDefault();
-    $(this).ekkoLightbox({
-      alwaysShowClose: true,
-    });
-  });
 
 </script>
 </body>
